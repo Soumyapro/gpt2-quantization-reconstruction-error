@@ -24,7 +24,7 @@ Quantization shrinks a model's weights, but the real question is: **how much doe
 
 ## Result
 
-![Per-layer reconstruction error chart](reconstruction_error_chart.png)
+![Per-layer reconstruction error chart](img.jpg)
 
 *(`lm_head` is excluded from this chart for scale. Its MSE was 1891.56, more than 100x larger than any other layer.)*
 
