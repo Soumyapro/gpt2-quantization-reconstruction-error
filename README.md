@@ -13,12 +13,12 @@ Measuring how much each layer's output changes when GPT-2's weights are compress
 
 ## Why this matters
 
-Quantization shrinks a model's weights, but the real question is: **how much does that actually change what the model computes?** A weight can be rounded a lot and barely affect the output, or barely be rounded at all and still throw the output off significantly. Measuring *output* reconstruction error (rather than just weight error) shows which layers can be compressed aggressively, and which ones need to be handled more carefully.
+Quantization shrinks a model's weights, but the real question is: does that actually change what the model computes? Sometimes a weight can be rounded a lot and the output barely changes. Other times, even a small rounding error throws the output off significantly. That's why this project measures output error, not just weight error. It shows which layers can be compressed heavily, and which ones need more care.
 
 ## Setup
 
 - **Model:** `gpt2` (GPT-2 small, HuggingFace `transformers`)
-- **Calibration data:** 20 sample descriptions from the [`ag_news`](https://huggingface.co/datasets/ag_news) dataset
+- **Calibration data:** 20 sample descriptions from the [`ag_news`] dataset (from HuggingFace)
 - **Quantization:** 4-bit, symmetric, per-channel (custom implementation)
 - **Environment:** Google Colab
 
